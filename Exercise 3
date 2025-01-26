@@ -1,0 +1,28 @@
+    class Main {
+    public static void main(String[] args) {
+        // Part of Initial investment amount
+        double initialInvestment = 2500;
+        // Target amount
+        double targetAmount = 5000;
+        // Annual interest rate 
+        double annualRate = 0.075;
+
+        // tracking the current amount and years
+        double currentAmount = initialInvestment;
+        int years = 0;
+
+        // This part is calculating the years needed to reach the target amount
+        while (currentAmount < targetAmount) {
+            currentAmount += currentAmount * annualRate; // Compound annually
+            years++;
+        }
+
+        // Final touch
+        System.out.println("| Initial investment: $" + initialInvestment);
+        System.out.println("| Annual interest rate: " + (annualRate * 100) + "%");
+        System.out.println("| Target amount: $" + targetAmount);
+        System.out.println();
+        System.out.println(" ~~~o--------------------o~~~");
+        System.out.print("| It will take " + years + " years for the investment to grow to at least $" + targetAmount);
+    }
+}
