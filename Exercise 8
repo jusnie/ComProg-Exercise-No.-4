@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+    class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int secretNumber = (int) (Math.random() * 20) + 1; // Random number between 1 and 20
+        int guess;
+        int attempts = 0;
+        System.out.println("\t\t\t TRY TO GUESS UNTIL YOU CATCH ");
+        System.out.println();
+
+        System.out.print("\t\t Guess a number between 1 and 20:");
+        System.out.println();
+
+        // Allow as many guesses as needed
+        do {
+            System.out.print(" Enter your guess: ");
+            guess = scanner.nextInt();
+            attempts++;
+
+            if (guess < secretNumber) {
+                System.out.println(" Too low! Enter once again.");
+            } else if (guess > secretNumber) {
+                System.out.println( " Too high! Enter once again.");
+            } else {
+                System.out.println();
+                System.out.println(" ~~~o-----------------o~~~");
+
+                System.out.print("|You guessed it in " + attempts + " attempts!|");
+                System.out.println(" ~~~o-----------------o~~~");
+            }
+        } while (guess != secretNumber);
+    }
+}
