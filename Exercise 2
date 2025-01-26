@@ -1,0 +1,26 @@
+import java.util.Scanner;
+  
+    class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println();
+        System.out.println("~~~o--------------------o~~~");
+        System.out.print(" Enter a positive integer: ");
+        int number = scanner.nextInt();
+        System.out.println();
+        System.out.println("~~~o--------------------o~~~");
+
+        System.out.print(" Prime factors of " + number + " are: ");
+        int counter = 2;
+
+        while (number >= counter) {
+            if (number % counter == 0) {
+                System.out.print(counter + " ");
+                number /= counter;
+            } else {
+                counter++;
+            }
+        }
+    }
+}
