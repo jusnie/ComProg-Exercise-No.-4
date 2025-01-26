@@ -4,7 +4,7 @@ import java.util.Scanner;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(); 
-        // Input: Get a positive integer from the user
+        // Inputing a positive integer
         
         System.out.print("\t\t\t Enter a positive integer: ");
         int number = scanner.nextInt();
@@ -12,18 +12,18 @@ import java.util.Scanner;
         int originalNumber = number;
         int sum = 0;
 
-        // Process: Calculate the sum of the cubes of the digits
+        // this part is the process of calculating the sum of the cubes
         while (number > 0) {
-            int digit = number % 10; // Extract the last digit
-            sum += digit * digit * digit; // Add the cube of the digit to the sum
-            number /= 10; // Remove the last digit
+            int digit = number % 10; 
+            sum += digit * digit * digit; 
+            number /= 10; 
         }
 
-        // Output the result
+        // outcome
         System.out.println("\t\t The sum of the cubes of the digits is: " + sum);
         System.out.println("\t\t\t ~~~o--------------------o~~~");
 
-        // Check if the number equals the sum of the cubes of its digits
+        // identifying if the number equals the sum of the cubes of its digits e
         if (originalNumber == sum) {
             System.out.println(originalNumber + " is equal to the sum of the cubes of its digits.");
         } else {
