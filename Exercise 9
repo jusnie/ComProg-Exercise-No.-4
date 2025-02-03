@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        // Print table header
+        System.out.println("x^1   x^2   x^3   x^4   x^5");
+        System.out.println("~~~o--------------------o~~~");
+        
+        // Print each row manually
+        System.out.println("1     1     1     1     1");
+        System.out.println("2     4     8     16    32");
+        System.out.println("3     9     27    81    243");
+        System.out.println("4     16    64    256   1024");
+        System.out.println("5     25    125   625   3125");
+        System.out.println("6     36    216   1296  7776");
+    }
+}
