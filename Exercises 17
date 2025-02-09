@@ -1,0 +1,30 @@
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String secretPassword = "password"; 
+        int maxAttempts = 3;
+        int attempts = 0;
+        boolean authenticated = false;
+ 
+        while (attempts < maxAttempts && !authenticated) {
+            System.out.print("Enter the password: ");
+            String inputPassword = scanner.nextLine();
+ 
+            if (inputPassword.equals(secretPassword)) {
+                System.out.println("Welcome");
+                authenticated = true;
+            } else {
+                System.out.println("The password you typed is incorrect.");
+                attempts++;
+            }
+        }
+ 
+        if (!authenticated) {
+            System.out.println("Access denied.");
+        }
+        scanner.close();
+    }
+}
