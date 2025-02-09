@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your first name: ");
+        String firstName = scanner.next();
+
+        System.out.print("Enter your middle initial: ");
+        String middleInitial = scanner.next();
+
+        System.out.print("Enter your last name: ");
+        String lastName = scanner.next();
+
+        System.out.println("Your monogram is: " + firstName.toLowerCase().charAt(0) +
+                middleInitial.toLowerCase().charAt(0) + lastName.toUpperCase().charAt(0));
+
+        scanner.close();
+    }
+}
