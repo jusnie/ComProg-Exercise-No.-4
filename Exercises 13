@@ -1,0 +1,37 @@
+public class Main {
+ 
+    public static int hailstoneIterations(int n) {
+        int iterations = 0;
+        while (n != 1) {
+            if (n % 2 == 0) {
+                n /= 2;
+            } else {
+                n = 3 * n + 1;
+            }
+            iterations++;
+        }
+        return iterations;
+    }
+ 
+    public static void main(String[] args) {
+        int maxIterations = 0;
+        int maxIterationsNum = 0;
+        boolean allReachCycle = true;
+ 
+        for (int i = 1; i <= 200; i++) {
+            int iterations = hailstoneIterations(i);
+            if (iterations > maxIterations) {
+                maxIterations = iterations;
+                maxIterationsNum = i;
+            }
+        }
+ 
+        System.out.println("a) Do all integers from 1 to 200 eventually reach the cycle (4, 2, 1, 4, 2, 1...)?");
+        System.out.println("  This is an unsolved problem in mathematics.  The program shows results for 1-200.");
+ 
+        System.out.println("\nb) What is the maximum number of iterations to reach the cycle and which starting number produces this maximum?");
+        System.out.println("  Maximum iterations: " + maxIterations);
+        System.out.println("  Starting number: " + maxIterationsNum);
+ 
+    }
+}
