@@ -1,0 +1,28 @@
+import java.util.Scanner;
+ 
+public class Main {
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+ 
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num1 = input.nextInt();
+        System.out.println();
+        System.out.print("Enter second number: ");
+        int num2 = input.nextInt();
+ 
+        if (num1 < 0 || num2 < 0) {
+            System.out.println("Invalid input.");
+        } else {
+            int result = gcd(num1, num2);
+            System.out.println();
+            System.out.println("The GCD is: " + result);
+        }
+        input.close();
+    }
+}
