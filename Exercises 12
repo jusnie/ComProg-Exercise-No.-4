@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input
+        System.out.print(" Enter the first starting number: ");
+        int first = scanner.nextInt();
+
+        System.out.print(" Enter the second starting number: ");
+        int second = scanner.nextInt();
+
+        int originalFirst = first, originalSecond = second;
+        int count = 0;
+
+        // Print the first two numbers
+        System.out.print(first + " " + second + " ");
+
+        // Generaterating the necklace sequence
+        do {
+            int next = (first + second) % 10; 
+            System.out.print(next + " ");
+            first = second;
+            second = next;
+            count++;
+        } while (!(first == originalFirst && second == originalSecond));
+
+        // Output number of steps
+        System.out.println("\nSteps: " + count);
+        scanner.close();
+    }
+}
