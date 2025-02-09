@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input
+        System.out.print(" Enter the starting hour: ");
+        int startHour = scanner.nextInt();
+        System.out.println();
+
+        System.out.print(" Enter am or pm: ");
+        String period = scanner.next().toLowerCase();
+
+        System.out.print(" Enter the number of elapsed hours: ");
+        int elapsedHours = scanner.nextInt();
+        System.out.println();
+
+        // Compute new hour
+        int newHour = (startHour + elapsedHours) % 12;
+        if (newHour == 0) newHour = 12;
+
+        // Switch AM/PM if hours exceed 12
+        int periodSwitch = (startHour + elapsedHours) / 12;
+        if (periodSwitch % 2 == 1) {
+            period = period.equals("am") ? "pm" : "am";
+        }
+
+        // Output result
+        System.out.println();
+        System.out.println(" The time is: " + newHour + ":00 " + period);
+        scanner.close();
+    }
+}
